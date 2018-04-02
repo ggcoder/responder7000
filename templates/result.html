@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Result{% endblock %}
+{% block body %}
+<div style="text-align: center; width: 1500px;padding-top:100px;">
+    <font size="14" >抢答结果</font>
+    <br/>
+    <br/>
+</div>
+<div style="width: 1500px;padding-left:600px;">
+    <ul>
+        {% for item in result %}
+        <p style="font-size:20px;">{{loop.index}}  :  {{item}}</p>
+        <br/>
+        {% endfor %}
+    </ul>
+</div>
+<div style="width:300px;height:300px;float:left;padding-left:700px;">
+    <form method="get" action="/user/">
+        <button type="submit" style="width:140px;height:60px;font-size:20px;">返回</button>
+    </form>
+</div>
+{% endblock %}

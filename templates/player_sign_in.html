@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Flasky{% endblock %}
+{% block body %}
+<h1 style="text-align: center;font-size:50px;">请输入您的姓名!</h1>
+<form method="post" action="/player_sign_in/">
+        {{ form.hidden_tag() }}
+        <div style="padding-top:0px;width:100%;text-align: center;font-size:30px;">
+            {{ form.name.label }} {{ form.name()|safe }}
+        </div>
+        <div style="padding-top:30px;width:100%;text-align: center;font-size:30px;">
+            <input type="submit" value="提交" />
+        </div>
+</form>
+{% if register == 1 %}
+    <script language="javascript">
+        alert("注册成功！正在转向抢答页面");
+    </script>
+<meta http-equiv="refresh" content="0.2;url=/player/"/>
+{% endif %}
+{% if register == 2 %}
+    <script language="javascript">
+        alert("该用户名已经被注册！");
+    </script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Flasky{% endblock %}
+{% block body %}
+<div style="text-align: center; width: 100%; padding-top:200px;">
+    <font size="30" align="center">欢迎登陆管理员界面</font>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div style="text-align: center; width:100%;">
+    <form method="post" action="/user/">
+        {{ form.hidden_tag() }}
+        <div style="padding-top:0px;text-align: center;width:100%;height:100px;font-size:20px;">
+            {{ form.name.label }} {{ form.name()|safe }}
+        </div>
+        <div style="padding-top:10px;text-align: center;width:100%;height:100px;font-size:20px;">
+            {{ form.password.label }} {{ form.password()|safe }}
+        </div>
+        <div style="padding-top:10px;text-align: center;width:100%;height:200px;font-size:20px;">
+        	<input type="submit" value="登录" />
+        </div>
+    </form>
+</div>
+{% endblock %}

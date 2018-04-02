@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block head%}
+{% if start %}
+<meta http-equiv="refresh" content="1,url=/refresh/"/>
+{% endif %}
+{% endblock %}
+{% block title %}Administration{% endblock %}
+{% block body %}
+{% if start %}
+<div style="text-align: center; width: 1500px;padding-top:200px;">
+    <font size="14" align="center">开始抢答！</font>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
+<div style="width:300px;height:300px;float:left;padding-left:300px;">
+    <form method="get" action="/Administrator/stop/">
+        <button type="submit" style="width:140px;height:60px;font-size:20px;">Stop</button>
+    </form>
+</div>
+{% else %}
+<div style="text-align: center; width: 1500px;padding-top:200px;">
+    <font size="14" align="center">准备抢答！</font>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
+<div style="width:300px;height:300px;float:left;padding-left:300px;">
+    <form method="get" action="/Administrator/start/">
+        <button type="submit" style="width:140px;height:60px;font-size:20px;">开始</button>
+    </form>
+{% endif %}
+</div>
+<div style="width:300px;height:300px;float:left;padding-left:100px;">
+    <form method="get" action="/Administrator/result/">
+        <button type="submit" style="width:140px;height:60px;font-size:20px;">结果</button>
+    </form>
+</div>
+<div style="width:300px;height:300px;float:left;padding-left:100px;">
+    <form method="get" action="/Administrator/export/">
+        <button type="submit" style="width:140px;height:60px;font-size:20px;">导出</button>
+    </form>
+</div>
+{% if export %}
+    <script language="javascript">
+        alert("结果导出成功！");
+    </script>
+{% endif %}
+{% endblock %}

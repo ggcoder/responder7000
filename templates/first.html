@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block head%}
+{% endblock %}
+{% block title %}First{% endblock %}
+{% block body %}
+<div style="text-align: center; width: 1500px;padding-top:200px;">
+    <font size="14" align="center">第一名：</font>
+</div>
+<div style="text-align: center; width: 1500px;">
+    <font style="font-size:150px;text-align: center;">{{name}}</font>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
+<div style="text-align: center; width: 1500px;">
+    <form method="get" action="/Administrator/stop/">
+        <button type="submit" style="width:140px;height:60px;font-size:20px;">返回</button>
+    </form>
+</div>
+{% endblock %}
